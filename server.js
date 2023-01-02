@@ -26,8 +26,8 @@ dotenv.config();
 
 const mailgun = () =>
   mg({
-    apiKey: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_DOMIAN,
+    apiKey: "52770730df12bb27417d278bc3808293-c2efc90c-c49be8f3",
+    domain: "sandbox966792d89f1c42af8ea4aca8c90c5006.mailgun.org",
   });
 
 
@@ -87,11 +87,10 @@ app.get("*", function (res, req) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-const MONGO_DB_URL = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.pn5jxqp.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
-mongoose.connect(MONGO_DB_URL)
+mongoose.connect(`mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority`)
     .then(() => {
-        app.listen(process.env.PORT || port)
+        app.listen(8000 || port)
     })
 
 
