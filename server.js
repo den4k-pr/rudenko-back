@@ -90,6 +90,6 @@ app.get("*", function (res, req) {
 mongoose.set("strictQuery", false);
 mongoose.connect('mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority')
 app.listen(port)
-
+ 
 
 
