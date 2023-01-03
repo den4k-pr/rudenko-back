@@ -87,6 +87,8 @@ app.get("*", function (res, req) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(port)
 mongoose.set("strictQuery", false);
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL || 'mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority');
+    .then(() => {
+        app.listen(port)
+    })
