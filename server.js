@@ -5,10 +5,7 @@ const mg = require('mailgun-js');
 const app = express();
 const path = require('path');
 require('dotenv').config();
-const port = process.env.PORT || 5000;
-const cors = require('cors')
-
-app.use(cors())
+const port = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,16 +18,13 @@ app.get('/', (req, res) => {
     res.send('Hellow world!')
 });
 
-app.get('/get', (req, res) => {
-  res.send('nareshti')
-});
 
 dotenv.config();
 
 const mailgun = () =>
   mg({
-    apiKey: "52770730df12bb27417d278bc3808293-c2efc90c-c49be8f3",
-    domain: "sandbox966792d89f1c42af8ea4aca8c90c5006.mailgun.org",
+    apiKey: process.env.MAILGUN_API_KEY,
+    domain: process.env.MAILGUN_DOMIAN,
   });
 
 
@@ -84,8 +78,17 @@ app.post('/api/busket', (req, res) => {
     );
 });
 
-mongoose.connect('mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority')
+// app.use(express.static(path.join(__dirname, "./client/build")));
 
-app.listen(port)
+// app.get("*", function (res, req) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
+
+// const MONGO_DB_URL = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.pn5jxqp.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
+
+mongoose.connect("mongodb://localhost:27017")
+    .then(() => {
+        app.listen(process.env.PORT || port)
+    })
 
 
