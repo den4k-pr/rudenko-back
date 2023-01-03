@@ -84,12 +84,6 @@ app.post('/api/busket', (req, res) => {
     );
 });
 
-app.use(express.static(path.join(__dirname, "./client/build")));
-
-app.get("*", function (res, req) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
 mongoose.connect('mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority')
 
 app.listen(port)
