@@ -90,7 +90,5 @@ app.get("*", function (res, req) {
 
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL, () => {
-    .then(() => {
-        app.listen(8000 || port)
-    })
+    app.listen(8000 || port)
 });
