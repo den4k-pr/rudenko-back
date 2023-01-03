@@ -87,8 +87,6 @@ app.get("*", function (res, req) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-
+app.listen(port)
 mongoose.set("strictQuery", false);
-mongoose.connect(process.env.MONGO_URL, () => {
-    app.listen(port)
-});
+mongoose.connect(process.env.MONGO_URL);
