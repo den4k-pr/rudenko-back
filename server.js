@@ -88,7 +88,7 @@ app.get("*", function (res, req) {
 });
 
 app.listen(port)
-mongoose.connect(MONGO_URL)
+mongoose.connect('mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority')
  
 
 
