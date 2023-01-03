@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const mg = require('mailgun-js');
 const app = express();
-const path = require('path');
 const cors = require('cors');
 require('dotenv').config();
 const port = process.env.PORT || 8000;
