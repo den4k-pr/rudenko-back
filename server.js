@@ -85,19 +85,13 @@ app.post('/api/busket', (req, res) => {
     );
 });
 
-app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/*', function (req, res) {
-   res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.use(express.static(path.join(__dirname, "./build")));
+
+app.get("/*", function (res, req) {
+  res.sendFile(path.join(__dirname, "./build/index.html"));
 });
-  
-// app.use(express.static(path.join(__dirname, "./client/build")));
 
-// app.get("/*", function (res, req) {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
-
-// const MONGO_DB_URL = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.pn5jxqp.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority')
