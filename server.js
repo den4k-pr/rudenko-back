@@ -87,7 +87,7 @@ app.post('/api/busket', (req, res) => {
 
 // app.use(express.static(path.join(__dirname, "./client/build")));
 
-// app.get("*", function (res, req) {
+// app.get("/*", function (res, req) {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
