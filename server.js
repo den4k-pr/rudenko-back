@@ -27,6 +27,7 @@ app.get('/', (req, res) => {
 
 dotenv.config();
 
+
 const mailgun = () =>
   mg({
     apiKey: '52770730df12bb27417d278bc3808293-c2efc90c-c49be8f3',
