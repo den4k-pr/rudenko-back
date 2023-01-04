@@ -5,7 +5,7 @@ const path = require('path');
 const multer = require('multer');
 
 const storage = multer.diskStorage({
-    destination: 'rudenko-back.up.railway.app/assets/',
+    destination: './images/',
     filename: (req, file, cb) => {
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
