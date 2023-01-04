@@ -85,7 +85,7 @@ app.post('/api/busket', (req, res) => {
     );
 });
 
-
+app.use(express.static(__dirname + '/assets'));
 app.use(express.static(path.join(__dirname, "./build")));
 
 app.get("/*", function (res, req) {
