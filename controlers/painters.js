@@ -70,7 +70,6 @@ const createPainters = async (req, res) => {
         const { city, description, name } = req.body;
 
         const painter = await Painter.create({
-            planeImage: `http://localhost:${process.env.PORT}/static/${req.file.filename}`,
             city,
             description,
             name
