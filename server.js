@@ -15,6 +15,7 @@ app.use(
 )
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/static", express.static(__dirname + "/assets"));
 app.use('/api/planes', require('./routes/planes'))
 app.use('/api/painters', require('./routes/painters'))
 app.use('/api/categories', require('./routes/categories'))
