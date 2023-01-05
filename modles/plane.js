@@ -29,7 +29,7 @@ const planeSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    planeImage: {
+    image: {
         type: String,
         required: true
     }
