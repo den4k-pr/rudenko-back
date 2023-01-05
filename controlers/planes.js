@@ -96,10 +96,10 @@ const createPlane = async (req, res) => {
     }
 
     try {
-        const { title, name, category, materials, size, price, description, } = req.body;
+        const { title, name, category, materials, size, price, description, image } = req.body;
 
         const plane = await Plane.create({
-            planeImage: `http://localhost:${process.env.PORT}/static/${req.file.filename}`,
+            image,
             title,
             name,
             category,
