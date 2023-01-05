@@ -60,30 +60,6 @@ app.post('/api/email', (req, res) => {
     );
 });
 
-app.post('/api/busket', (req, res) => {
-  const { phone, email, message } = req.body;
-  mailgun()
-    .messages()
-    .send(
-      {
-        from: `${email}`,
-        to: 'denmemm@gmail.com',
-        html: `<p>from: ${email}</p>
-        <p>phone: ${phone}</p>
-        <p>email: ${email}</p>
-        <p>message: ${message}</p>`,
-      },
-      (error, body) => {
-        if (error) {
-          console.log(error);
-          res.status(500).send({ message: 'Error in sending email' });
-        } else {
-          console.log(body);
-          res.send({ message: 'Email sent successfully' });
-        }
-      }
-    );
-});
 
 app.use(express.static(__dirname + '/assets'));
 
