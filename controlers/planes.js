@@ -62,38 +62,6 @@ const deletePlane = async (req, res) => {
 
 
 const createPlane = async (req, res) => {
-    const errors = {}
-    if (!req.body.title) {
-        errors.title = { message: "Укажите название"}
-    }
-    if (!req.body.name) {
-        errors.name = { message: "Укажите Имя"}
-    }
-    if (!req.body.category) {
-        errors.category = { message: "Укажите category"}
-    }
-    if (!req.body.materials) {
-        errors.materials = { message: "Укажите материалы"}
-    }
-    if (!req.body.size) {
-        errors.size = { message: "Укажите размеры"}
-    }
-    if (!req.body.price) {
-        errors.price = { message: "Укажите цену"}
-    }
-    if (!req.body.description) {
-        errors.description = { message: "Укажите описание"}
-    }
-    if (req.body.description && req.body.description.length > 700) {
-        errors.description = { message: "Слишком длиное описание"}
-    }
-    if (!req.file) {
-        errors.planeImage = { message: "Добавте фото"}
-    }
-    
-    if (Object.keys(errors).length > 0) {
-        return res.status(400).json(errors);
-    }
 
     try {
         const { title, name, category, materials, size, price, description, image } = req.body;
