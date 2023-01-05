@@ -67,9 +67,10 @@ const deletePainter = async (req, res) => {
 const createPainters = async (req, res) => {
 
     try {
-        const { city, description, name } = req.body;
+        const { city, description, name, image } = req.body;
 
         const painter = await Painter.create({
+            image,
             city,
             description,
             name
