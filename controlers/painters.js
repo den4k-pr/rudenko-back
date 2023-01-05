@@ -22,6 +22,7 @@ const getPainters = async (req, res) => {
 };
 
 
+
 const getPainter = async (req, res) => {
     try {
         const painter = await Painter.find({ _id: req.params.id })
@@ -66,10 +67,10 @@ const deletePainter = async (req, res) => {
 const createPainters = async (req, res) => {
 
     try {
-        const { city, description, name, planeImage } = req.body;
+        const { city, description, name } = req.body;
 
         const painter = await Painter.create({
-            planeImage,
+            planeImage: `http://localhost:${process.env.PORT}/static/${req.file.filename}`,
             city,
             description,
             name
