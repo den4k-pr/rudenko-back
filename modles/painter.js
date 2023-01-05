@@ -12,10 +12,6 @@ const painterSchema = mongoose.Schema({
     description: {
         type: String,
         required: true
-    },
-    planeImage: {
-        type: String,
-        required: true
     }
 })
 
