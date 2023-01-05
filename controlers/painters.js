@@ -22,7 +22,6 @@ const getPainters = async (req, res) => {
 };
 
 
-
 const getPainter = async (req, res) => {
     try {
         const painter = await Painter.find({ _id: req.params.id })
