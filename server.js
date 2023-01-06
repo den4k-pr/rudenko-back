@@ -7,6 +7,25 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const port = process.env.PORT || 8000;
+const nodemailer = require('nodemailer')
+
+const transporter = nodemailer.createTransport({
+  serice: 'gmail',
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD
+  }
+})
+
+const mailOptions = {
+  from: 'yakovden4k@gmail.com',
+  to: 'yakovden4k@gmail.com',
+  subject: 'yakovden4k@gmail.com',
+  text: 'yakovden4k@gmail.com'
+}
+
+transporter.sendMail(mailOptions)
+
 
 app.use(bodyParser.json());
 app.use(
