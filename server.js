@@ -44,10 +44,10 @@ const transporter = nodemailer.createTransport({
   }
 })
 const mailOptions = {
-  from: 'yakovden4k@gmail.com',
-  to: 'yakovden4k@gmail.com',
-  subject: 'yakovden4k@gmail.com',
-  text: 'yakovden4k@gmail.com'
+  from: 'denmemm@gmail.com',
+  to: 'denmemm@gmail.com',
+  subject: 'denmemm@gmail.com',
+  text: 'denmemm@gmail.com'
 }
 transporter.sendMail(mailOptions)
 
