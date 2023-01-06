@@ -15,7 +15,7 @@ exports.sendMail = (req, res) => {
 
     var message = {
         from: process.env.EMAIL,
-        to: userMail,
+        to: process.env.EMAIL,
         subject: "this is test",
         text: userMessage,
     };
