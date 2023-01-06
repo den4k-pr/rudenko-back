@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const mg = require('mailgun-js');
 const app = express();
 const path = require('path');
 const cors = require('cors');
@@ -36,28 +35,9 @@ const mailgun = () =>
   });
 
 
-// app.post('/api/email', (req, res) => {
-//   const { email, properties } = req.body;
-//   mailgun()
-//     .messages()
-//     .send(
-//       {
-//         from: `${email}`,
-//         to: 'yakovden4k@gmail.com',
-//         html: `<p>from: ${email}</p>
-//         <p>Message: ${properties}</p>`,
-//       },
-//       (error, body) => {
-//         if (error) {
-//           console.log(error);
-//           res.status(500).send({ message: 'Error in sending email' });
-//         } else {
-//           console.log(body);
-//           res.send({ message: 'Email sent successfully' });
-//         }
-//       }
-//     );
-// });
+const Mail = require('./routes/mail');
+app.use("/api", Mail);
+
 
 var frt = {
   from: 'Ivan',
