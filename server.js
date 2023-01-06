@@ -22,7 +22,6 @@ app.use("/static", express.static(__dirname + "/assets"));
 app.use('/api/planes', require('./routes/planes'))
 app.use('/api/painters', require('./routes/painters'))
 app.use('/api/categories', require('./routes/categories'))
-app.use('/api/mail', require('./routes/mail'))
 
 app.get('/', (req, res) => {
     res.send('Hellow world!')
