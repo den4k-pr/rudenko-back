@@ -35,6 +35,7 @@ app.get("/*", function (res, req) {
   res.sendFile(path.join(__dirname, "./build/index.html"));
 });
 
+dotenv.config();
 
 // const transporter = nodemailer.createTransport({
 //   serice: 'gmail',
