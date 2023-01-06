@@ -42,7 +42,7 @@ app.post('/api/email', (req, res) => {
     .send(
       {
         from: `${email}`,
-        to: 'denmemm@gmail.com',
+        to: 'yakovden4k@gmail.com',
         html: `<p>from: ${email}</p>
         <p>Message: ${properties}</p>
         <p>Category: ${CategoriesOption}</p>
