@@ -45,8 +45,6 @@ app.post('/api/email', (req, res) => {
         to: 'yakovden4k@gmail.com',
         html: `<p>from: ${email}</p>
         <p>Message: ${properties}</p>
-        <p>Category: ${CategoriesOption}</p>
-        <p>Artist: ${paintersOption}</p>`,
       },
       (error, body) => {
         if (error) {
