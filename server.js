@@ -28,31 +28,6 @@ app.get('/', (req, res) => {
 dotenv.config();
 
 
-const mailgun = () =>
-  mg({
-    apiKey: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_DOMIAN,
-  });
-
-
-const Mail = require('./routes/mail');
-app.use("/api", Mail);
-
-
-var frt = {
-  from: 'Ivan',
-  to: 'yakovden4k@gmail.com',
-  subject: 'Hellow world',
-  text: 'nnn'
-}
-mailgun.messages().send(frt, function (error, body) {
-  if (error) {
-    console.log(error);
-  }
-  console.log(body);
-})
-
-
 app.use(express.static(__dirname + '/assets'));
 
 app.use(express.static(path.join(__dirname, "./build")));
