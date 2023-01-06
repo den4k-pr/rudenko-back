@@ -9,23 +9,6 @@ require('dotenv').config();
 const port = process.env.PORT || 8000;
 const nodemailer = require('nodemailer')
 
-const transporter = nodemailer.createTransport({
-  serice: 'gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
-  }
-})
-
-const mailOptions = {
-  from: 'yakovden4k@gmail.com',
-  to: 'yakovden4k@gmail.com',
-  subject: 'yakovden4k@gmail.com',
-  text: 'yakovden4k@gmail.com'
-}
-
-transporter.sendMail(mailOptions)
-
 app.use(bodyParser.json());
 app.use(
   cors({
@@ -51,6 +34,24 @@ app.use(express.static(path.join(__dirname, "./build")));
 app.get("/*", function (res, req) {
   res.sendFile(path.join(__dirname, "./build/index.html"));
 });
+
+
+const transporter = nodemailer.createTransport({
+  serice: 'gmail',
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD
+  }
+})
+const mailOptions = {
+  from: 'yakovden4k@gmail.com',
+  to: 'yakovden4k@gmail.com',
+  subject: 'yakovden4k@gmail.com',
+  text: 'yakovden4k@gmail.com'
+}
+transporter.sendMail(mailOptions)
+
+
 
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb+srv://Den4ik_:frgX6V21e7ZugwE7@cluster0.pn5jxqp.mongodb.net/rudenko-art-pro?retryWrites=true&w=majority')
