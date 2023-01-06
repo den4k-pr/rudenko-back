@@ -37,20 +37,20 @@ app.get("/*", function (res, req) {
 
 dotenv.config();
 
-// const transporter = nodemailer.createTransport({
-//   serice: 'gmail',
-//   auth: {
-//     user: process.env.EMAIL,
-//     pass: process.env.PASSWORD
-//   }
-// })
-// const mailOptions = {
-//   from: 'denmemm@gmail.com',
-//   to: 'denmemm@gmail.com',
-//   subject: 'denmemm@gmail.com',
-//   text: 'denmemm@gmail.com'
-// }
-// transporter.sendMail(mailOptions)
+const transporter = nodemailer.createTransport({
+  serice: 'gmail',
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASSWORD
+  }
+})
+const mailOptions = {
+  from: 'denmemm@gmail.com',
+  to: 'denmemm@gmail.com',
+  subject: 'denmemm@gmail.com',
+  text: 'denmemm@gmail.com'
+}
+transporter.sendMail(mailOptions)
 
 
 
