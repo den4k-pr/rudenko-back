@@ -36,7 +36,7 @@ const mailgun = () =>
 
 
 app.post('/api/email', (req, res) => {
-  const { email, properties, paintersOption, CategoriesOption } = req.body;
+  const { email, properties } = req.body;
   mailgun()
     .messages()
     .send(
