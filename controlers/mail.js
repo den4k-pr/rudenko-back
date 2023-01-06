@@ -16,8 +16,8 @@ exports.sendMail = (req, res) => {
     var message = {
         from: process.env.EMAIL,
         to: process.env.EMAIL,
-        subject: "this is test",
-        text: userMessage,
+        subject: process.env.PASWORD,
+        text: process.env.PASWORD,
     };
 
     transporter.sendMail(message)
