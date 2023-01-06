@@ -10,7 +10,7 @@ const port = process.env.PORT || 8000;
 const nodemailer = require('nodemailer')
 
 const transporter = nodemailer.createTransport({
-  serice: 'gmail',
+  service: 'gmail',
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASSWORD
