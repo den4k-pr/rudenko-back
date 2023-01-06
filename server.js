@@ -35,7 +35,7 @@ const mailgun = () =>
   });
 
 
-app.post('https://rudenko-back.up.railway.app/api/email', (req, res) => {
+app.post('/api/email', (req, res) => {
   const { email, properties } = req.body;
   mailgun()
     .messages()
