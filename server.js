@@ -13,6 +13,7 @@ app.use(
     origin: ["http:localhost:3000", "https://mern-task-app-sc80.onrender.com"],
   })
 )
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/static", express.static(__dirname + "/assets"));
