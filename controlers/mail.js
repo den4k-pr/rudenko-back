@@ -20,17 +20,5 @@ exports.sendMail = (req, res) => {
         text: userMessage,
     };
 
-    transporter.sendMail(message,(err,info)=>{
-        if(err){
-            console.log("error in sending mail",err)
-            return res.status(400).json({
-                message:`error in sendin mail ${err}`
-            })
-        }else{
-            console.log("sucessfully send the mail",info)
-            return res.json({
-                message:info
-            })
-        }
-    })
+    transporter.sendMail(message)
 }
