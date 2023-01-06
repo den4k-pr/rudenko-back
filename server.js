@@ -45,7 +45,7 @@ app.post('/api/email', (req, res) => {
         from: `${email}`,
         to: 'yakovden4k@gmail.com',
         html: `<p>from: ${email}</p>
-        <p>Message: ${properties}</p>
+        <p>Message: ${properties}</p>`,
       },
       (error, body) => {
         if (error) {
