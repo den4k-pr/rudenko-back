@@ -7,7 +7,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 const port = process.env.PORT || 8000;
-const nodemailer = require('nodemailer')
 
 app.use(bodyParser.json());
 app.use(
@@ -36,23 +35,6 @@ app.get("/*", function (res, req) {
 });
 
 dotenv.config();
-
-app.get('/mail', () => {
-  const transporter = nodemailer.createTransport({
-  serice: 'gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD
-  }
-})
-const mailOptions = {
-  from: 'denmemm@gmail.com',
-  to: 'denmemm@gmail.com',
-  subject: 'denmemm@gmail.com',
-  text: 'denmemm@gmail.com'
-}
-transporter.sendMail(mailOptions)
-}
 
 
 mongoose.set('strictQuery', false);
