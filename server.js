@@ -37,7 +37,8 @@ app.get("/*", function (res, req) {
 
 dotenv.config();
 
-const transporter = nodemailer.createTransport({
+app.get('/mail', () => {
+  const transporter = nodemailer.createTransport({
   serice: 'gmail',
   auth: {
     user: process.env.EMAIL,
@@ -51,7 +52,7 @@ const mailOptions = {
   text: 'denmemm@gmail.com'
 }
 transporter.sendMail(mailOptions)
-
+}
 
 
 mongoose.set('strictQuery', false);
