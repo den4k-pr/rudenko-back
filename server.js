@@ -36,28 +36,41 @@ const mailgun = () =>
   });
 
 
-app.post('/api/email', (req, res) => {
-  const { email, properties } = req.body;
-  mailgun()
-    .messages()
-    .send(
-      {
-        from: `${email}`,
-        to: 'yakovden4k@gmail.com',
-        html: `<p>from: ${email}</p>
-        <p>Message: ${properties}</p>`,
-      },
-      (error, body) => {
-        if (error) {
-          console.log(error);
-          res.status(500).send({ message: 'Error in sending email' });
-        } else {
-          console.log(body);
-          res.send({ message: 'Email sent successfully' });
-        }
-      }
-    );
-});
+// app.post('/api/email', (req, res) => {
+//   const { email, properties } = req.body;
+//   mailgun()
+//     .messages()
+//     .send(
+//       {
+//         from: `${email}`,
+//         to: 'yakovden4k@gmail.com',
+//         html: `<p>from: ${email}</p>
+//         <p>Message: ${properties}</p>`,
+//       },
+//       (error, body) => {
+//         if (error) {
+//           console.log(error);
+//           res.status(500).send({ message: 'Error in sending email' });
+//         } else {
+//           console.log(body);
+//           res.send({ message: 'Email sent successfully' });
+//         }
+//       }
+//     );
+// });
+
+var frt = {
+  from: 'Ivan',
+  to: 'yakovden4k@gmail.com',
+  subject: 'Hellow world',
+  text: 'nnn'
+}
+mailgun.messages().send(frt, function (error, body) {
+  if (error) {
+    console.log(error);
+  }
+  console.log(body);
+})
 
 
 app.use(express.static(__dirname + '/assets'));
