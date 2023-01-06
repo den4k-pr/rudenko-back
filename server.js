@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 dotenv.config();
 
 const Mail = require('./routes/mail');
-app.use("/api", Mail);
+app.use("/api/email", Mail);
 
 
 app.use(express.static(__dirname + '/assets'));
