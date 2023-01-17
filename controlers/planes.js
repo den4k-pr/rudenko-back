@@ -68,6 +68,10 @@ const createPlane = async (req, res) => {
 
         const plane = await Plane.create({
             image,
+            image_2,
+            image_3,
+            image_4,
+            image_5,
             title,
             name,
             category,
