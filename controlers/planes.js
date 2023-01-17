@@ -64,14 +64,14 @@ const deletePlane = async (req, res) => {
 const createPlane = async (req, res) => {
 
     try {
-        const { title, name, category, materials, size, price, description, image, image_2, image_3, image_4, image_5 } = req.body;
+        const { title, name, category, materials, size, price, description, image, image2, image3, image4, image5 } = req.body;
 
         const plane = await Plane.create({
             image,
-            image_2,
-            image_3,
-            image_4,
-            image_5,
+            image2,
+            image3,
+            image4,
+            image5,
             title,
             name,
             category,
