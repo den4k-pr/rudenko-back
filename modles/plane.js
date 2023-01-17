@@ -33,19 +33,19 @@ const planeSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    image_2: {
+    image2: {
         type: String,
         required: true
     },
-    image_3: {
+    image3: {
         type: String,
         required: true
     },
-    image_4: {
+    image4: {
         type: String,
         required: true
     },
-    image_5: {
+    image5: {
         type: String,
         required: true
     }
