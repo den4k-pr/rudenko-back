@@ -12,7 +12,7 @@ const port = process.env.PORT || 8000;
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["http:localhost:3000", "https://mern-task-app-sc80.onrender.com"],
+    origin: ["http:localhost:3000", "https://rudenko-art-pro.onrender.com"],
   })
 )
 
